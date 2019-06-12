@@ -8,11 +8,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
 
-
 app.post('/contact-form', (req, res) => {
-    fs.appendFile('./server/form.json', JSON.stringify({ 'Name': `${req.body.name}`, 'Email': `${req.body.email}` }, null, 2), (err) => {
+    fs.appendFile(path.join(__dirname, './server/form.json'), JSON.stringify({ 'Name': `${req.body.name}`, 'Email': `${req.body.email}` }, null, 2), (err) => {
         if (err) console.log(err);
         res.send('Your form has been submitted.');
+        next();
     });
 });
 
@@ -25,6 +25,7 @@ app.get('/formsubmissions', (req, res) => {
             let submits = JSON.parse(data);
             submits.push(req.body);
             res.send(submits);
+            
         }
     })
 })
