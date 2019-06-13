@@ -1,76 +1,26 @@
-{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Niko",
-  "Email": "test@test.com"
-}{
-  "Name": "Niko",
-  "Email": "test@test.com"
-}{
-  "Name": "Niko",
-  "Email": "test@test.com"
-}{
-  "Name": "Niko",
-  "Email": "test@test.com"
-}{
-  "Name": "",
-  "Email": ""
-}{
-  "Name": "Niko",
-  "Email": "test@test.com"
-}{
-  "Name": "Niko",
-  "Email": "test@test.com"
-}{
-  "Name": "Niko",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "",
-  "Email": ""
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "Megan",
-  "Email": "test@test.com"
-}{
-  "Name": "New",
-  "Email": "test@test.com"
-}
+[
+  {
+    "name": "Megan",
+    "email": "test@test.com"
+  },
+  {
+    "name": "Megan Solga",
+    "email": "test@test.com"
+  },
+  {
+    "name": "Megan Solga",
+    "email": "test@test.com"
+  },
+  {
+    "name": "Flying Spaghetti Monster",
+    "email": "fsm@religionsucks.com"
+  },
+  {
+    "name": "Salvador Dali",
+    "email": "me@meltingclocks.com"
+  },
+  {
+    "name": "Salvador Dali",
+    "email": "me@meltingclocks.com"
+  }
+]

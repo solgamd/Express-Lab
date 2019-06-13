@@ -4,28 +4,37 @@ const fs = require('fs');
 
 let app = express();
 
-app.use(express.json());
+const dataPath = path.join(__dirname, './form.json');
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
 
+app.use((req, res, next) => {
+    console.log(req.url);
+    next();
+});
+
 app.post('/contact-form', (req, res) => {
-    fs.appendFile(path.join(__dirname, './server/form.json'), JSON.stringify({ 'Name': `${req.body.name}`, 'Email': `${req.body.email}` }, null, 2), (err) => {
+    fs.readFile(dataPath, (err, data) => {
         if (err) console.log(err);
-        res.send('Your form has been submitted.');
-        next();
+        let submits = JSON.parse(data);
+        console.log(req.body);
+        submits.push(req.body);
+        fs.writeFile(dataPath, JSON.stringify(submits, null, 2), (err) => {
+            if (err) console.log(err);
+            res.send('Cheers! You will soon be bombarded with loads of spam.');
+        })
     });
 });
 
 app.get('/formsubmissions', (req, res) => {
-    fs.readFile(path.join(__dirname, './server/form.json'), (err, data) => {
+    fs.readFile(dataPath, (err, data) => {
         if (err) {
-            console.log(err);
+            console.log(err.response);
             res.sendStatus(500);
         } else {
             let submits = JSON.parse(data);
-            submits.push(req.body);
             res.send(submits);
-            
         }
     })
 })
@@ -33,3 +42,4 @@ app.get('/formsubmissions', (req, res) => {
 app.listen(3000, () => {
     console.log('server running!');
 });
+
